@@ -61,7 +61,7 @@ function createWindow () {
   Menu.setApplicationMenu(menu);
 
   mainWindow.loadURL(winURL)
-  mainWindow.setFullScreen(true)
+
   mainWindow.on('closed', () => {
     mainWindow = null
   })

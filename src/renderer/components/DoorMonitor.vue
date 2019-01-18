@@ -1,7 +1,6 @@
 <template>
-
-<div id="showNow" style="margin:0px">
-    <b-alert show :variant="status?'primary':'danger'">{{notification}}</b-alert>
+<div id="showNow">
+    <b-alert show :variant="status?'info':'danger'">{{notification}}</b-alert>
     <b-card>
         <b-row >
             <b-col sm="12">                        
@@ -18,14 +17,15 @@
   </b-card>
 </div>   
 </template>
+<script src="static/js/paho-mqtt.js" type="text/javascript"></script>
 <script>
 /* eslint-disable */
-
 import { requestFullscreen,exitFullscreen } from '@/utils/fullScreen.js'
 import { createGuid } from '@/utils/createGuid.js'
 import MyCard from '@/components/Card'
 import MyThumbnails from '@/components/Thumbnails'
 import { formatDate } from '@/utils/formatDate.js'
+
 export default {
   data(){
     return {
@@ -39,8 +39,8 @@ export default {
             outtime: '2018-07-06 18:00'
         },
       userInfoIn: {
-            src:"../../static/image/noentry.jpg",
-            company:'XXX',
+            src:"static/image/noentry.jpg",
+            company:'',
             department:"XXX",            
             empno:"XXX",
             name:"XXX",
@@ -48,8 +48,8 @@ export default {
             time:'0000-00-00'
       },
       userInfoOut: {
-            src:"../../static/image/noentry.jpg",
-            company:'XXX',
+            src:"static/image/noentry.jpg",
+            company:'',
             department:"XXX",            
             empno:"XXX",
             name:"XXX",
@@ -57,8 +57,8 @@ export default {
             time:'0000-00-00'
       },
       userunknown: {
-            src:"../../static/image/noentry.jpg",
-            company:'未知',
+            src:"static/image/noentry.jpg",
+            company:'',
             empno:"未知",
             name:"未知",
             zwei:"未知",
@@ -215,7 +215,7 @@ export default {
   },
   mounted:function(){
    		this.clientId = createGuid();
-		  this.connect();
+		this.connect();
   }
 }
 

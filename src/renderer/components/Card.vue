@@ -2,24 +2,24 @@
 <div>
     <b-row>
         <b-col sm="5">
-            <b-row>
+            <b-row>                                
                     <b-col sm="6">
                             <!--<b-img :src="user.src" fluid-grow alt="Responsive Image" />-->
-                            <b-img thumbnail width="300" height="265" :src="user.src" alt="Responsive Image" />                                                                                                                                                                     
+                            <b-img thumbnail width="620" fluid :src="user.src" alt="Responsive Image" />                                                                                                                                                                     
                     </b-col>
 
                     <b-col sm="6">
-                    <b-card title="Card Title"
-                            <b-list-group style="font-size:14px;">
-                                    <b-list-group-item :variant=" doorinout?'success':'primary'">{{ doortext }}</b-list-group-item>
+                        <b-card :title="doortext" class="text-center">
+                            <b-list-group style="font-size:16px;" class="font-weight-bold text-justify">                                    
                                     <b-list-group-item :active="user.company?true:false">廠別：{{user.company}}</b-list-group-item>
                                     <b-list-group-item>部門：{{user.department}}</b-list-group-item>
                                     <b-list-group-item>工號：{{user.empno}}</b-list-group-item>
                                     <b-list-group-item>姓名：{{user.name}}</b-list-group-item> 
                                     <b-list-group-item>職稱: {{user.zwei}}</b-list-group-item>                                            
+                                                                                 
                                     <b-list-group-item variant="danger">時間：{{user.time}}</b-list-group-item>
                              </b-list-group>
-                    </b-card>
+                        </b-card>
                     </b-col> 
             </b-row>          
         </b-col>
